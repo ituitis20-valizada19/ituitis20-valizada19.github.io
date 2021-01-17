@@ -1,0 +1,120 @@
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+background-color: thistle;
+}
+th, td {
+  padding: 10px;
+}
+</style>
+<h2 style="color: RebeccaPurple;">Teachers</h2>
+</style>
+<br>
+<table id="table" border="1">
+    <tr>
+        <th>Teacher name &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp</th> 
+        <th>Subject &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp</th>         
+        <th>Cluster &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp</th>
+    </tr>
+</table>
+<br> 
+<br>
+<br>
+<form id="3lu">
+  <label for="teachers"><b>Teacher Name:</b></label>
+  <input type="text" id="tn" name="tn">
+  <label for="subject"><b>Subject:</b></label>
+  <input type="text" id="st" name="st">
+  <label for="cluster"><b>Cluster:</b></label>
+<select id="cr" name="cr">
+  <option value="Sayısal">SAY</option>
+  <option value="Sözel">SÖZ</option>
+  <option value="Eşit Ağırlık">EA</option>
+  
+</select>
+ <input type="button" name="clr" id="clr" value="Add Teacher" onclick="AddRow()">
+</form>
+<br> <br>
+<br> <br>
+<br>
+ <table id="table1" border="1">
+    <tr>
+        <th>Sports Type &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp</th> 
+        <th>Team Name &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp</th>         
+    </tr>
+</table>
+
+<br>
+<br>
+<br>
+
+<form id="2li">
+
+  <label for="sporttype"><b>Sport Type:</b></label>
+  <select id="spt" name="spt">
+   <option value="Volleyball">Volleyball</option>
+   <option value="Football">Football</option>
+   <option value="Basketball">Basketball</option>
+    </select>
+    
+    <label for="tm"><b>Team Name:</b></label>
+    
+    <input type="text" id="tmn" name="tmn">
+ <input type="button" name="tmn" id="tmn" value="Add Team" onclick="AddRow2()">
+
+</form>
+
+
+<script>
+
+
+		function AddRow(){
+
+			var names;
+			var subject;
+			var cluster;
+
+			var AddRown = document.getElementById('table');
+			var NewRow = AddRown.insertRow(1);
+
+			names = document.getElementById("tn").value;
+			subject = document.getElementById("st").value;
+			cluster = document.getElementById("cr").value;
+
+			var cel1 = NewRow.insertCell(0);
+			var cel2 = NewRow.insertCell(1);
+			var cel3 = NewRow.insertCell(2);
+
+			cel1.innerHTML = names;
+			cel2.innerHTML = subject;
+			cel3.innerHTML = cluster;
+
+
+document.getElementById("3lu").reset();
+		}
+
+function AddRow2(){
+
+			var sporttypes;
+			var teamname;
+
+			var AddRown = document.getElementById('table1');
+			var NewRow = AddRown.insertRow(1);
+
+			sporttypes = document.getElementById("spt").value;
+			teamname = document.getElementById("tmn").value;
+
+			var cel1 = NewRow.insertCell(0);
+			var cel2 = NewRow.insertCell(1);
+
+			cel1.innerHTML = sporttypes;
+			cel2.innerHTML = teamname;
+
+
+document.getElementById("2li").reset();
+		}
+
+
+
+	</script>
